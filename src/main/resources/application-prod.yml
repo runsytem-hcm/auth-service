@@ -1,0 +1,12 @@
+logging:
+  level:
+    ROOT: info
+    jp.gmo.auth: info
+  file:
+    path: log
+
+spring:
+  application:
+    name: auth-service
+  profiles:
+    active: prod
