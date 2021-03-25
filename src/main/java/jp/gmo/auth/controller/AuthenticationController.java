@@ -24,7 +24,6 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/api/v1")
 public class AuthenticationController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AuthenticationController.class);
     private final AuthenticationService authenticationService;
     
     @PostMapping("/authenticate")

@@ -1,5 +1,6 @@
 package jp.gmo.auth.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -33,8 +34,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 			authenticationManager.authenticate(authentication);
 			
 			AccountDto response = callAPIsService.getAccountInfo(request.getEmail());
-			
-			return tokenProvider.doGenerateToken(response, request.getRememberMe());
+			response.setPassword("");
+			return tokenProvider.doGenerateToken(response, false);
 
 		} catch (AuthenticationException e) {
 			LOG.error("{}", e);

@@ -1,9 +1,11 @@
 logging:
   level:
-    ROOT: info
-    jp.gmo.auth: info
+    ROOT: debug
+    jp.gmo.auth: debug
   file:
     path: log
+server:
+  port: 8080
 
 spring:
   application:
@@ -17,4 +19,4 @@ jwt:
   
 gmo:
   url:
-    getAccountInfo: http://localhost:8081/api/v1/user/get-account-info
+    getAccountInfo: http://localhost:8081/api/v1/user/get-account
